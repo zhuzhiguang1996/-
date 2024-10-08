@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.transform {
+  transform: translateZ(0);
+}
+
+.hover\:-translate-y-2:hover {
+  transform: translateY(-0.5rem);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Banner container styles */
+.banner-container {
+  height: 300px; /* Default height for mobile */
+}
+
+@media (min-width: 768px) {
+  .banner-container {
+    height: 400px; /* Medium height for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-container {
+    height: 500px; /* Larger height for desktops */
+  }
+}
+
+/* Mobile timeline adjustments */
+@media (max-width: 768px) {
+  #history .flex-col {
+    align-items: flex-start;
+  }
+
+  #history .w-full {
+    width: calc(100% - 32px);
+    margin-left: 32px;
+  }
+
+  #history .flex.justify-center {
+    position: absolute;
+    left: 0;
+  }
+}
